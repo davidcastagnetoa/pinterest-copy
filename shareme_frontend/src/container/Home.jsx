@@ -10,8 +10,16 @@ import { client } from "../client";
 import logoWhite from "../assets/logowhite.png";
 import logo from "../assets/logo.png";
 import { fetchUser } from "../utils/fetchUser";
+import {MyEstadoGlobalContext} from '../components/MyEstadoGlobalContext';
+import Popup from "../components/Popup";
 
+<<<<<<< Updated upstream
 const Home = () => {
+=======
+const Home = ( { }) => {
+  // const navigate = useNavigate();
+  const {popup, setPopup} = React.useContext(MyEstadoGlobalContext);
+>>>>>>> Stashed changes
   const [toggleSidebar, setToggleSidebar] = useState(false);
   const [user, setUser] = useState(null);
   const scrollRef = useRef(null);
@@ -87,13 +95,15 @@ const Home = () => {
       </div>
       {/* Body */}
       <div
-        className="pb-2 flex-1 h-screen overflow-y-scroll bg-gh-l-bg-default dark:bg-gh-bg-default"
+        className="Home pb-2 flex-1 h-screen overflow-y-scroll bg-gh-l-bg-default dark:bg-gh-bg-default"
         ref={scrollRef}
       >
         <Routes>
           <Route path="/user-profile/:userId" element={<UserProfile />} />
           <Route path="/*" element={<Pins user={user && user} />} />
         </Routes>
+        {popup && <Popup />}
+        {/* pinToPopup={deletePin(e)} */}
       </div>
     </div>
   );

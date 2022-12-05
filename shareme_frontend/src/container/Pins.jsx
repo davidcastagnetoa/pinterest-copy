@@ -10,7 +10,12 @@ const Pins = ({ user }) => {
       <div className="bg-gh-l-bg-default dark:bg-gh-bg-default">
         <Navbar searchTerm={searchTerm} setSearchTerm={setSearchTerm} user={user}/>
       </div>
+<<<<<<< Updated upstream
       <div className="h-full bg-black dark:bg-gh-bg-primary rounded-lg p-2 mt-2">
+=======
+      {/* Pins Collection Background :  bg-black dark:bg-gh-bg-primary rounded-lg p-2 mt-2*/}
+      <div className="Pins h-full rounded-lg mt-2 p-0">
+>>>>>>> Stashed changes
         <Routes>
           <Route path="/" element={<Feed/>}/>
           <Route path="/category/:categoryId" element={<Feed/>}/>

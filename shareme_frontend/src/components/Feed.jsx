@@ -27,7 +27,18 @@ const Feed = () => {
 
   if (loading)
     return <Spinner message="We are adding new ideas to your feed!" />;
+<<<<<<< Updated upstream
   return <div>{pins && <MasonryLayout pins={pins} />}</div>;
+=======
+  }
+  
+  
+  return (
+    <div className="Feed">
+      {pins && (<MasonryLayout pins={pins} />)}
+    </div>
+  );
+>>>>>>> Stashed changes
 };
 
 export default Feed;
