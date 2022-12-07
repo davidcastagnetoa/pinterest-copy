@@ -91,8 +91,12 @@ const PinDetail = ({ user }) => {
     // Scroll back to the title element...
     // titleRef.current.scrollIntoView({ top: 0, behavior: "smooth" });
     // document.getElementById('about').scrollIntoView();
-    document.querySelector("#about > div > div.bg-gh-l-bg-default.dark\\:bg-gh-bg-default > div").scrollIntoView({ top: 0, behavior: "smooth" })
-  };
+    document
+      .querySelector(
+        "#about > div > div.bg-gh-l-bg-default.dark\\:bg-gh-bg-default > div"
+      )
+      .scrollIntoView({ top: 0, behavior: "smooth" });
+  }
 
   if (!pinDetail) return <Spinner message="Loading Pin" />;
 
@@ -162,40 +166,83 @@ const PinDetail = ({ user }) => {
 
               {/* Right Side Box of Pin */}
               <div className="w-full p-5 flex-1">
-                <div className="flex items-center justify-between flex-col gap-2 xl:gap-0 xl:flex-row">
-                  {/* Download Pin Button */}
-                  <div className="flex gap-2 items-center">
-                    <a
-                      href={`${pinDetail.image.asset.url}?dl=`}
-                      download
-                      onClick={(e) => e.stopPropagation()}
-                      className="w-fit h-9 flex items-center justify-center text-sm px-4 py-2 outline-none   bg-sd_btn_primary border-sd_btn_primary_hover text-light hover:bg-sd_btn_primary_hover active:shadow-active dark:text-white dark:bg-gh_btn_primary dark:hover:bg-gh_btn_primary_hover shadow-primary border-default border-solid border-sd_btn_primary_hover dark:border-transparent rounded-lg"
-                    >
-                      Download
-                      <HiCloudDownload fontSize={20} className="ml-2" />
-                    </a>
-                  </div>
-                  {/* Delete Pin button */}
-                  {pinDetail.postedBy?._id === user?._id && (
-                    <button
-                      onClick={(e) => {
-                        handleBackClick();
-                        e.stopPropagation();
-                        setPopup(true);
-                      }}
-                      className="w-fit h-9 flex items-center justify-center text-sm px-4 py-2 outline-none   text-white bg-sd_btn_alternative border-sd_btn_alternative_hover text-base hover:bg-sd_btn_alternative_hover active:shadow-active shadow-primary border-default border-solid border-transparent rounded-lg"
-                    >
-                      Delete Pin
-                      <HiTrash fontSize={20} className="ml-2" />
-                    </button>
-                  )}
+                <div className="flex flex-col items-center">
+                  <div className="flex items-center justify-between w-full flex-col gap-2 xl:gap-0 xl:flex-row">
+                    {/* Download Pin Button */}
+                    <div className="flex gap-2 items-center">
+                      <a
+                        href={`${pinDetail.image.asset.url}?dl=`}
+                        download
+                        onClick={(e) => e.stopPropagation()}
+                        className="w-36 
+                        h-9 
+                        flex 
+                        items-center 
+                        justify-center 
+                        px-3 py-2 
+                        outline-none 
+                        
+                        bg-sd_btn_primary 
+                        border-sd_btn_primary_hover
+                        
+                        text-white 
+                        text-sm
+                        hover:bg-sd_btn_primary_hover 
+                        active:shadow-active 
+                        shadow-primary 
+                        border-default 
+                        border-solid 
+                        dark:border-transparent 
+                        rounded-lg
+                          
+                        dark:bg-gh_btn_primary 
+                        dark:hover:bg-gh_btn_primary_hover
+                        dark:text-white"
+                      >
+                        Download
+                        <HiCloudDownload fontSize={19.5} className="ml-2" />
+                      </a>
+                    </div>
+                    {/* Delete Pin button */}
+                    {pinDetail.postedBy?._id === user?._id && (
+                      <div
+                        onClick={(e) => {
+                          handleBackClick();
+                          e.stopPropagation();
+                          setPopup(true);
+                        }}
+                        className="w-36 
+                        h-9 
+                        flex 
+                        items-center 
+                        justify-center 
+                        px-3 py-2 
+                        outline-none 
 
+                        bg-sd_btn_alternative 
+                        border-sd_btn_alternative_hover 
+
+                        text-white 
+                        text-sm 
+                        hover:bg-sd_btn_alternative_hover 
+                        active:shadow-active 
+                        shadow-primary 
+                        border-default 
+                        border-solid 
+                        dark:border-transparent 
+                        rounded-lg"
+                      >
+                        Delete Pin
+                        <HiTrash fontSize={19.5} className="ml-2" />
+                      </div>
+                    )}
+                  </div>
                   {/* url link pin */}
                   <a
                     href={pinDetail.destination}
                     target="_blank"
                     rel="noreferrer"
-                    className="maxandroid:text-xs tablet:text-sm dark:font-extralight maxlaptop:mt-2 font-normal"
+                    className="mt-3 maxandroid:text-xs tablet:text-sm dark:font-extralight maxlaptop:mt-2 font-normal"
                   >
                     {pinDetail.destination}
                   </a>

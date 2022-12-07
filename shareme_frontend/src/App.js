@@ -10,8 +10,7 @@ const App = () => {
     const user = localStorage.getItem('user') !== 'undefined' ? JSON.parse(localStorage.getItem('user')) : localStorage.clear();
     // console.log(user)
     if(!user) navigate('/login');
-  }, [])
-  
+  }, []);
  
   return (
     <Routes>

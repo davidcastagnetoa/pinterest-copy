@@ -1,12 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { AiOutlineLogout } from "react-icons/ai";
+import { ImExit } from "react-icons/im";
 import { useNavigate, useParams } from "react-router-dom";
 
-import {
-  GoogleLogin,
-  GoogleLogout,
-  GoogleOAuthProvider,
-} from "react-google-login";
+import { GoogleLogout, GoogleOAuthProvider } from "react-google-login";
 import { gapi } from "gapi-script";
 
 import {
@@ -69,7 +65,7 @@ const UserProfile = () => {
             <img
               src={user?.image}
               className="rounded-full w-20 h-20 mt-10 shadow-xl object-cover"
-              alt="user-picture"
+              alt="user-avatar"
             />
             <h1 className="font-semibold text-2xl text-center m-3">
               {user?.userName}
@@ -86,7 +82,7 @@ const UserProfile = () => {
                       onClick={renderProps.onClick}
                       disabled={renderProps.disabled}
                     >
-                      <AiOutlineLogout fontSize={20} />
+                      <ImExit fontSize={20} />
                       Logout
                     </button>
                   )}

@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { HiMenu } from "react-icons/hi";
 import { AiFillCloseCircle } from "react-icons/ai";
-import { Link, Route, Routes, useNavigate } from "react-router-dom";
+import { Link, Route, Routes } from "react-router-dom";
 
 import { Sidebar, UserProfile } from "../components";
 import Pins from "./Pins";
@@ -12,7 +12,6 @@ import logo from "../assets/logo2.png";
 import { fetchUser } from "../utils/fetchUser";
 
 const Home = ({}) => {
-  // const navigate = useNavigate();
   const [toggleSidebar, setToggleSidebar] = useState(false);
   const [user, setUser] = useState(null);
   const scrollRef = useRef(null);
@@ -32,7 +31,7 @@ const Home = ({}) => {
 
   return (
     <div className="flex text-slate-900 dark:text-white sm:flex-row flex-col h-screen transition-height duration-75 ease-out">
-      <div className="hidden sm:flex h-screen flex-initial">
+      <div className="hidden sm:flex h-[calc(100vh - 2rem)] flex-initial">
         {/* Mobile Sidebar */}
         <Sidebar user={user && user} />
       </div>
@@ -48,7 +47,7 @@ const Home = ({}) => {
           <Link to="/">
             <img
               src={
-                document.documentElement.classList == "dark" ? logoWhite : logo
+                document.documentElement.classList === "dark" ? logoWhite : logo
               }
               alt="logo"
               className="w-1/2"
