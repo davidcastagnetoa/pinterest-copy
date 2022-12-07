@@ -7,8 +7,8 @@ import { Sidebar, UserProfile } from "../components";
 import Pins from "./Pins";
 import { userQuery } from "../utils/data";
 import { client } from "../client";
-import logoWhite from "../assets/logowhite2.png";
-import logo from "../assets/logo2.png";
+import logoWhite2 from "../assets/logowhite2.png";
+import logoWhite3 from "../assets/logowhite3.png";
 import { fetchUser } from "../utils/fetchUser";
 
 const Home = ({}) => {
@@ -47,7 +47,7 @@ const Home = ({}) => {
           <Link to="/">
             <img
               src={
-                document.documentElement.classList === "dark" ? logoWhite : logo
+                document.documentElement.classList === "dark" ? logoWhite3 : logoWhite3
               }
               alt="logo"
               className="w-1/2"

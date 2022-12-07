@@ -18,8 +18,9 @@ export default function Switcher() {
       <div className="w-11 h-11 text-gray-500 hover:text-gray-100 border-gray-500 border font-medium rounded-full      text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 p-2.5">
         <DarkModeSwitch
           checked={darkSide}
-          size={20}
           onChange={toogleDarkMode}
+          size={20}
+          color={'gray-100'}
         />
       </div>
     </>

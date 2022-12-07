@@ -2,10 +2,9 @@ import React, { useState, useRef, useEffect } from "react";
 import { useNavigate, navLink, Link, NavLink } from "react-router-dom";
 import { RiHomeFill } from "react-icons/ri";
 import { BiCategoryAlt } from "react-icons/bi";
-import { FaSun, FaMoon } from "react-icons/fa";
 import { ImExit } from "react-icons/im";
-import logoWhite from "../assets/logowhite2.png";
-import logo from "../assets/logo2.png";
+import logoWhite2 from "../assets/logowhite2.png";
+import logoWhite3 from "../assets/logowhite3.png";
 import { GoogleLogout } from "react-google-login";
 import { gapi } from "gapi-script";
 import { categories } from "../utils/data";
@@ -41,7 +40,7 @@ const Sidebar = ({ user, closeToggle }) => {
         >
           <img
             src={
-              document.documentElement.classList == "dark" ? logoWhite : logoWhite
+              document.documentElement.classList == "dark" ? logoWhite3 : logoWhite3
             }
             alt="logo"
             className="w-full"
@@ -60,7 +59,7 @@ const Sidebar = ({ user, closeToggle }) => {
             <RiHomeFill />
             Home
           </NavLink>
-          <h3 className="mt-2 px-5 text-base xl:text-lg 2xl:text-xl">
+          <h3 className="mt-2 px-5 text-base xl:text-lg 2xl:text-xl text-white">
             Discover categories
           </h3>
           {categories.slice(0, categories.length - 1).map((category) => (
