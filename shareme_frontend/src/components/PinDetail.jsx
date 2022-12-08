@@ -260,7 +260,7 @@ const PinDetail = ({ user }) => {
                   className="flex gap-2 mt-5 items-center bg-sd_l_bg_default dark:bg-gh-bg-default rounded-lg p-1"
                 >
                   <img
-                    className="w-8 h-8 rounded-full object-cover border border-solid border-cyan-400"
+                    className="w-8 h-8 rounded-full object-cover border border-solid border-gold_btn_alternative_hover"
                     src={pinDetail?.postedBy.image}
                     alt="user-profile"
                   />
@@ -324,7 +324,7 @@ const PinDetail = ({ user }) => {
                       <Link to={`/user-profile/${user._id}`}>
                         <img
                           src={user.image}
-                          className="w-10 h-10 rounded-full cursor-pointer border border-solid border-cyan-400"
+                          className="w-10 h-10 rounded-full cursor-pointer border border-solid border-gold_btn_alternative_hover"
                           alt="user-profile"
                         />
                       </Link>

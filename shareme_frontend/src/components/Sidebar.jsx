@@ -29,7 +29,7 @@ const Sidebar = ({ user, closeToggle }) => {
   };
 
   return (
-    <div className="flex flex-col justify-between h-full overflow-y-scroll min-w-210 android:max-w-[15rem] tablet:max-w-xs laptop:max-w-sm desktop:max-w-sm hide-scrollbar bg-gradient-to-t from-[#413418] to-[#1f1205] dark:bg-gh-bg-secondary dark:from-gh-bg-secondary dark:to-gh-bg-secondary border-r dark:border-slate-800/90">
+    <div className="flex flex-col justify-between h-full overflow-y-scroll min-w-210 android:max-w-[15rem] tablet:max-w-xs laptop:max-w-sm desktop:max-w-sm hide-scrollbar bg-gradient-to-t from-[#413418] to-[#1f1205] dark:bg-gh-bg-secondary dark:from-gh-bg-secondary dark:to-gh-bg-secondary border-r dark:border-[#9c704c5b]">
       <div className="flex flex-col">
         {/* Logo Link */}
         <Link
@@ -85,7 +85,7 @@ const Sidebar = ({ user, closeToggle }) => {
             <img
               src={user.image}
               alt="user-profile"
-              className="w-11 h-11 rounded-full   border-gray-500 border"
+              className="w-11 h-11 rounded-full border-gold_btn_alternative_hover border"
             />
           </Link>
         )}
@@ -101,7 +101,7 @@ const Sidebar = ({ user, closeToggle }) => {
               <button
                 type="button"
                 style={{ display: "flex", gap: "0.25rem" }}
-                className="w-11 h-11 text-gray-500 hover:text-gray-100 border-gray-500 border  font-medium rounded-full p-2.5  dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600"
+                className="w-11 h-11 text-gray-500 hover:text-gray-100 border-gold_btn_alternative_hover border  font-medium rounded-full p-2.5  dark:text-white dark:border-gold_btn_alternative_hover dark:hover:bg-gray-700 dark:hover:border-gold_btn_alternative_hover"
                 onClick={renderProps.onClick}
                 disabled={renderProps.disabled}
               >
