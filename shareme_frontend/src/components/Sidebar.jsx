@@ -3,8 +3,7 @@ import { useNavigate, navLink, Link, NavLink } from "react-router-dom";
 import { RiHomeFill } from "react-icons/ri";
 import { BiCategoryAlt } from "react-icons/bi";
 import { ImExit } from "react-icons/im";
-import logoWhite2 from "../assets/logowhite2.png";
-import logoWhite3 from "../assets/logowhite3.png";
+import logo from "../assets/AbigaelLogo.png";
 import { GoogleLogout } from "react-google-login";
 import { gapi } from "gapi-script";
 import { categories } from "../utils/data";
@@ -15,7 +14,7 @@ import Switcher from './Switcher';
 const isNotActiveStyle =
   "flex items-center px-5 gap-3 text-[#B8B1C0] dark:text-slate-400 hover:text-slate-200 hover:font-semibold dark:hover:text-white border-slate-400 transition-all duration-200 ease-in-out capitalize";
 const isActiveStyle =
-  "flex items-center px-5 gap-3 text-red-600 dark:text-sky-400 font-extrabold border-r-2 border-black dark:border-slate-400 transition-all duration-200 ease-in-out capitalize";
+  "flex items-center px-5 gap-3 text-red-600 dark:text-gold_btn_alternative_hover font-extrabold border-r-2 border-black dark:border-slate-400 transition-all duration-200 ease-in-out capitalize";
 
 const Sidebar = ({ user, closeToggle }) => {
   //close sidebar when something
@@ -30,7 +29,7 @@ const Sidebar = ({ user, closeToggle }) => {
   };
 
   return (
-    <div className="flex flex-col justify-between h-full overflow-y-scroll min-w-210 android:max-w-[15rem] tablet:max-w-xs laptop:max-w-sm desktop:max-w-sm hide-scrollbar bg-gradient-to-t from-[#0D0D1A] to-[#1C0F23] dark:bg-gh-bg-secondary dark:from-gh-bg-secondary dark:to-gh-bg-secondary border-r dark:border-slate-800/90">
+    <div className="flex flex-col justify-between h-full overflow-y-scroll min-w-210 android:max-w-[15rem] tablet:max-w-xs laptop:max-w-sm desktop:max-w-sm hide-scrollbar bg-gradient-to-t from-[#413418] to-[#1f1205] dark:bg-gh-bg-secondary dark:from-gh-bg-secondary dark:to-gh-bg-secondary border-r dark:border-slate-800/90">
       <div className="flex flex-col">
         {/* Logo Link */}
         <Link
@@ -40,7 +39,7 @@ const Sidebar = ({ user, closeToggle }) => {
         >
           <img
             src={
-              document.documentElement.classList == "dark" ? logoWhite3 : logoWhite3
+              document.documentElement.classList == "dark" ? logo : logo
             }
             alt="logo"
             className="w-full"

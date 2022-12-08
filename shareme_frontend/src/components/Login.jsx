@@ -2,8 +2,7 @@ import React from "react";
 import { GoogleLogin, GoogleOAuthProvider } from "@react-oauth/google";
 import { useNavigate } from "react-router-dom";
 import shareVideo from "../assets/share.mp4";
-import logo2 from "../assets/logowhite2.png";
-import logo3 from "../assets/logowhite3.png";
+import logoSVG from "../assets/AbigaelLogo.png";
 import { client } from "../client";
 import jwt_decode from "jwt-decode";
 
@@ -42,7 +41,7 @@ const Login = () => {
 
         <div className="absolute flex flex-col justify-center items-center top-0 right-0 left-0 bottom-0 bg-blackOverlay">
           <div className="p-5">
-            <img src={logo3} width="200px" alt="logo" />
+            <img src={logoSVG} width="200px" alt="logo" />
           </div>
 
           <div className="shadow-2xl">

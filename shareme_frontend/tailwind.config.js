@@ -103,6 +103,7 @@ module.exports = {
         'gh-l-bg-default':'#fff',
         'gh-l-bg-secondary':'#C2D1E0',
         'gh_l_bg_button':'#6588A9',
+
         // GH dark mode
         'gh_text_primary':'#FFFFFF',
         'gh_button_hover':'#0369a1',
@@ -117,6 +118,29 @@ module.exports = {
         'gh_btn_primary_hover':'#1d2030',
         'gh_btn_alternative':'#1E40AF',
         'gh_btn_alternative_hover':'#2563EB',
+
+
+        // Golden dark mode
+        'gold_text_primary':'#FFFFFF',
+        'gold_button_hover':'#0369a1',
+        'gold_button_text':'#FFFFFF',
+        // background
+        'gold-bg-primary': '#161b22',
+        'gold-bg-default': '#0d1117',
+        'gold-bg-secondary': '#010409',
+        'gold_bg_button':'#0ea5e9',
+        //dark
+        'gold_btn_primary':'#262b40',
+        'gold_btn_primary_hover':'#1d2030',
+        'gold_btn_alternative':'#744113',
+        'gold_btn_alternative_hover':'#a27432',
+        //light
+        'l_gold_btn_primary':'#f2f4f6',
+        'l_gold_btn_primary_hover':'#e3e7ec',
+        'l_gold_btn_alternative':'#7e5a27',
+        'l_gold_btn_alternative_hover':'#4e2c0c',
+
+
 
         // SD light mode
         'sd_l_text_primary':'#000000',
@@ -133,6 +157,9 @@ module.exports = {
         'sd_btn_primary_hover':'#e3e7ec',
         'sd_btn_alternative':'#F03200',
         'sd_btn_alternative_hover':'#a91636'
+
+
+
       },
       // backgroundImage: {
       //   'hero-pattern': "url('./assets/box.svg')"

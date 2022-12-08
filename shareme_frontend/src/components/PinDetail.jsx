@@ -185,7 +185,7 @@ const PinDetail = ({ user }) => {
                         bg-sd_btn_primary 
                         border-sd_btn_primary_hover
                         
-                        text-white 
+                        text-black 
                         text-sm
                         hover:bg-sd_btn_primary_hover 
                         active:shadow-active 
@@ -338,7 +338,7 @@ const PinDetail = ({ user }) => {
                       {/* Post comment Button */}
                       <button
                         type="button"
-                        className="px-6 py-2 outline-none text-white font-semibold text-base    bg-sd_btn_alternative border-sd_btn_alternative_hover text-white hover:bg-sd_btn_alternative_hover active:shadow-active dark:bg-gh_btn_alternative dark:hover:bg-gh_btn_alternative_hover shadow-primary border-default border-solid border-sd_btn_primary_hover dark:border-transparent rounded-lg"
+                        className="px-6 py-2 outline-none text-white font-semibold text-base bg-l_gold_btn_alternative border-l_gold_btn_alternative_hover hover:bg-l_gold_btn_alternative_hover active:shadow-active dark:bg-gold_btn_alternative dark:hover:bg-gold_btn_alternative_hover shadow-primary border-default border-solid dark:border-transparent rounded-lg"
                         onClick={addComment}
                       >
                         {addingComment ? "Posting the comment" : "!Post"}

@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { ImExit } from "react-icons/im";
 import { useNavigate, useParams } from "react-router-dom";
-
 import { GoogleLogout, GoogleOAuthProvider } from "react-google-login";
 import { gapi } from "gapi-script";
 

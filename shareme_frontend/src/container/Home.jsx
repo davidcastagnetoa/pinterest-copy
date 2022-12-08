@@ -7,8 +7,7 @@ import { Sidebar, UserProfile } from "../components";
 import Pins from "./Pins";
 import { userQuery } from "../utils/data";
 import { client } from "../client";
-import logoWhite2 from "../assets/logowhite2.png";
-import logoWhite3 from "../assets/logowhite3.png";
+import logo from "../assets/AbigaelLogo.png";
 import { fetchUser } from "../utils/fetchUser";
 
 const Home = ({}) => {
@@ -37,18 +36,16 @@ const Home = ({}) => {
       </div>
       {/* Head in small devices */}
       <div className="flex sm:hidden flex-row">
-        <div className="p-2 w-full flex flex-row justify-between items-center shadow-md bg-sd_l_bg_primary dark:bg-gh-bg-secondary border-b dark:border-slate-800/90 border-slate-900/10">
+        <div className="p-2 w-full flex flex-row justify-between items-center shadow-md bg-gradient-to-t from-[#2c2310] to-[#110a03] dark:from-gh-bg-secondary dark:to-gh-bg-secondary border-b dark:border-slate-800/90 border-slate-900/10">
           <HiMenu
             fontSize={40}
-            className="cursor-pointer"
+            className="cursor-pointer text-slate-200 dark:text-gold_btn_alternative_hover"
             onClick={() => setToggleSidebar(true)}
           />
           {/* Logo Shareme */}
           <Link to="/">
             <img
-              src={
-                document.documentElement.classList === "dark" ? logoWhite3 : logoWhite3
-              }
+              src={document.documentElement.classList === "dark" ? logo : logo}
               alt="logo"
               className="w-1/2"
             />
@@ -66,7 +63,7 @@ const Home = ({}) => {
                 alt="logo"
                 className="w-14 rounded-full border-solid border-2 border-cyan-400"
               />
-              <h1 className="pt-2 text-sm font-light text-slate-800 dark:text-slate-400 maxandroid:hidden androidWeb:pr-2 pt-0">
+              <h1 className="pt-2 text-sm font-light text-slate-300 maxandroid:hidden androidWeb:pr-2 pt-0">
                 {user?.userName}
               </h1>
             </Link>
@@ -82,7 +79,7 @@ const Home = ({}) => {
             <div className="absolute w-full flex justify-end items-center p-2 overflow-y-auto android:max-w-[15rem] tablet:max-w-xs laptop:max-w-sm desktop:max-w-sm">
               <AiFillCloseCircle
                 fontSize={30}
-                className="cursor-pointer rounded-full bg-white dark:bg-gh_button_text text-sd_l_bg_button dark:text-gh_bg_button hover:text-sd_l_button_hover dark:hover:text-gh_button_hover "
+                className="cursor-pointer rounded-full bg-slate-300 dark:bg-slate-300 text-l_gold_btn_alternative dark:text-gold_btn_alternative_hover hover:text-l_gold_btn_alternative_hover dark:hover:text-gold_btn_alternative"
                 onClick={() => setToggleSidebar(false)}
               />
             </div>
