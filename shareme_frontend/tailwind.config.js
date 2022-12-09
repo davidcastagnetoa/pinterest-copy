@@ -139,7 +139,8 @@ module.exports = {
         'l_gold_btn_primary_hover':'#e3e7ec',
         'l_gold_btn_alternative':'#7e5a27',
         'l_gold_btn_alternative_hover':'#4e2c0c',
-
+        'l_gold_primary':'#F0F3FE',
+        'l_gold_default':'#E4E8F4',
 
 
         // SD light mode

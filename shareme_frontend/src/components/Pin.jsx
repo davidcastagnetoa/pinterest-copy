@@ -236,7 +236,7 @@ const Pin = ({ pin: { postedBy, image, _id, destination, save } }) => {
         className="flex gap-2 mt-2 items-center"
       >
         <img
-          className="w-8 h-8 rounded-full object-cover border border-solid border-gold_btn_alternative_hover"
+          className="w-8 h-8 rounded-full object-cover border border-solid border-transparent dark:border-gold_btn_alternative_hover"
           src={postedBy?.image}
           alt="user-profile"
         />

@@ -61,7 +61,7 @@ const Home = ({}) => {
               <img
                 src={user?.image}
                 alt="logo"
-                className="w-14 rounded-full border-solid border-2 border-cyan-400"
+                className="w-14 rounded-full "
               />
               <h1 className="pt-2 text-sm font-light text-slate-300 maxandroid:hidden androidWeb:pr-2 pt-0">
                 {user?.userName}
@@ -73,7 +73,7 @@ const Home = ({}) => {
         {toggleSidebar && (
           // blur filter and width full screen (w-screen) (Optional)
           <div
-            onClick={() => setToggleSidebar(false)}
+            // onClick={() => setToggleSidebar(false)}
             className="fixed w-screen text-gray-800 dark:text-white h-screen overflow-y-auto shadow-md z-10 animate-slide-in backdrop-blur-sm"
           >
             <div className="absolute w-full flex justify-end items-center p-2 overflow-y-auto android:max-w-[15rem] tablet:max-w-xs laptop:max-w-sm desktop:max-w-sm">
@@ -91,7 +91,7 @@ const Home = ({}) => {
       {/* Body */}
       <div
         id="about"
-        className="pb-2 flex-1 h-screen overflow-y-scroll bg-gh-l-bg-default dark:bg-gh-bg-default"
+        className="pb-2 flex-1 h-screen overflow-y-scroll bg-l_gold_default dark:bg-gh-bg-default"
         ref={scrollRef}
       >
         <Routes>

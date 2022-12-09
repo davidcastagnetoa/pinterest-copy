@@ -115,7 +115,7 @@ const PinDetail = ({ user }) => {
         >
           <div className="backdrop-blur-sm bg-white/3 p-6 w-full h-full android:p-2 rounded-[32px]">
             <div
-              className="flex xl:flex-row flex-col bg-sd_l_bg_default p-1 dark:bg-gh-bg-default rounded-[32px]"
+              className="flex xl:flex-row flex-col bg-l_gold_primary p-1 dark:bg-gh-bg-default rounded-[32px]"
               style={{
                 // maxWidth: "1500px",
                 backgroundSize: "cover",
@@ -257,14 +257,14 @@ const PinDetail = ({ user }) => {
                 {/* If the user is login return user profile link */}
                 <Link
                   to={`/user-profile/${pinDetail?.postedBy._id}`}
-                  className="flex gap-2 mt-5 items-center bg-sd_l_bg_default dark:bg-gh-bg-default rounded-lg p-1"
+                  className="flex gap-2 mt-5 items-center bg-l_gold_primary dark:bg-gh-bg-default rounded-lg p-1"
                 >
                   <img
-                    className="w-8 h-8 rounded-full object-cover border border-solid border-gold_btn_alternative_hover"
+                    className="w-8 h-8 rounded-full object-cover border border-solid border-transparent dark:border-gold_btn_alternative_hover"
                     src={pinDetail?.postedBy.image}
                     alt="user-profile"
                   />
-                  <p className="text-sm font-semibold capitalize text-white">
+                  <p className="text-sm font-semibold capitalize text-black dark:text-white">
                     {pinDetail?.postedBy.userName}
                   </p>
                 </Link>
@@ -324,13 +324,13 @@ const PinDetail = ({ user }) => {
                       <Link to={`/user-profile/${user._id}`}>
                         <img
                           src={user.image}
-                          className="w-10 h-10 rounded-full cursor-pointer border border-solid border-gold_btn_alternative_hover"
+                          className="w-10 h-10 rounded-full cursor-pointer border border-solid border-transparent dark:border-gold_btn_alternative_hover"
                           alt="user-profile"
                         />
                       </Link>
                       <input
                         type="text"
-                        className="flex-1 outline-none rounded-2xl border p-2 focus:border-gray-300 dark:border-slate-400/30 border-slate-900/10"
+                        className="flex-1 outline-none rounded-2xl border p-2 focus:border-gray-300 dark:bg-gh-bg-primary border-slate-900/10"
                         placeholder="Add a comment"
                         value={comment}
                         onChange={(e) => setComment(e.target.value)}
@@ -338,7 +338,7 @@ const PinDetail = ({ user }) => {
                       {/* Post comment Button */}
                       <button
                         type="button"
-                        className="px-6 py-2 outline-none text-white font-semibold text-base bg-l_gold_btn_alternative border-l_gold_btn_alternative_hover hover:bg-l_gold_btn_alternative_hover active:shadow-active dark:bg-gold_btn_alternative dark:hover:bg-gold_btn_alternative_hover shadow-primary border-default border-solid dark:border-transparent rounded-lg"
+                        className="px-6 py-2 outline-none text-white font-semibold text-base bg-gh-bg-secondary border-l_gold_btn_alternative_hover hover:bg-l_gold_btn_alternative_hover active:shadow-active dark:bg-gold_btn_alternative dark:hover:bg-gold_btn_alternative_hover shadow-primary border-default border-solid dark:border-transparent rounded-full"
                         onClick={addComment}
                       >
                         {addingComment ? "Posting the comment" : "!Post"}

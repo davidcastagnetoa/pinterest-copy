@@ -16,7 +16,7 @@ import Spinner from "./Spinner";
 import jwt_decode from "jwt-decode";
 
 const activeBtnStyles =
-  "bg-red-500 text-white font-semibold p-2 rounded-full w-20 outline-none";
+  "dark:bg-gold_btn_alternative bg-gh-bg-secondary text-white font-semibold p-2 rounded-full w-20 outline-none";
 const notActiveBtnStyles =
   "bg-primary mr-4 text-black dark:text-white font-semibold p-2 rounded-full w-20 outline-none";
 
@@ -69,7 +69,7 @@ const UserProfile = () => {
             <h1 className="font-semibold text-2xl text-center m-3">
               {user?.userName}
             </h1>
-            <div className="absolute top-0 z-10 right-0 p-2">
+            <div className="absolute top-0 right-0 p-2">
               {userId === user._id && (
                 <GoogleLogout
                   clientId={process.env.REACT_APP_GOOGLE_API_TOKEN}

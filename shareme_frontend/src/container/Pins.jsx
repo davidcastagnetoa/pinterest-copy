@@ -7,7 +7,7 @@ const Pins = ({ user }) => {
 
   return (
     <div className="px-2 md:px-4">
-      <div className="bg-gh-l-bg-default dark:bg-gh-bg-default">
+      <div className="bg-l_gold_default dark:bg-gh-bg-default">
         <Navbar searchTerm={searchTerm} setSearchTerm={setSearchTerm} user={user}/>
       </div>
       {/* Pins Collection Background :  bg-black dark:bg-gh-bg-primary rounded-lg p-2 mt-2*/}
