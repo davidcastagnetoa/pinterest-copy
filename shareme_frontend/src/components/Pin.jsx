@@ -53,12 +53,6 @@ const Pin = ({ pin: { postedBy, image, _id, destination, save } }) => {
     });
   };
 
-  function handleBackClick() {
-    // Scroll back to the title element...
-    // titleRef.current.scrollIntoView({ top: 0, behavior: "smooth" });
-    // document.getElementById('about').scrollIntoView();
-    document.querySelector("#about > div > div.bg-gh-l-bg-default.dark\\:bg-gh-bg-default > div").scrollIntoView({ top: 0, behavior: "smooth" })
-  };
 
   return (
     <div className="m-2">
@@ -122,10 +116,10 @@ const Pin = ({ pin: { postedBy, image, _id, destination, save } }) => {
                 </a>
               )}
               {/* If user has create the PIN, he can delete it */}
-              {postedBy?._id === user?.sub && (
+              {/* Delete Button */}
+              {/* {postedBy?._id === user?.sub && (
                 <button
                   onClick={(e) => {
-                    handleBackClick();
                     e.stopPropagation();
                     setPopup(true);
                   }}
@@ -134,9 +128,9 @@ const Pin = ({ pin: { postedBy, image, _id, destination, save } }) => {
                 >
                   <BsFillTrash2Fill fontSize={24} />
                 </button>
-              )}
+              )} */}
               {/* Popup Banner warning delete pin */}
-              {postedBy?._id === user?.sub && (
+              {/* {postedBy?._id === user?.sub && (
                 <>
                   {popup && (
                     <div
@@ -172,23 +166,7 @@ const Pin = ({ pin: { postedBy, image, _id, destination, save } }) => {
                               ></path>
                             </svg>
                           </button>
-                          <div className="p-6 text-center">
-                            {/* <svg
-                              aria-hidden="true"
-                              className="mx-auto mb-4 text-gray-400 w-14 h-14 dark:text-gray-200"
-                              fill="none"
-                              stroke="currentColor"
-                              viewBox="0 0 24 24"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                stroke-width="2"
-                                d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                              ></path>
-                            </svg> */}
-                            
+                          <div className="p-6 text-center">                            
                             <GiOverkill fontSize={70} className='m-auto my-6'/>
                             <h3 className="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400">
                               Are you sure you want to delete this pin?
@@ -199,7 +177,7 @@ const Pin = ({ pin: { postedBy, image, _id, destination, save } }) => {
                                 e.stopPropagation();
                                 deletePin(_id);
                               }}
-                              className="font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center mr-2      bg-sd_btn_alternative border-sd_btn_alternative_hover text-white hover:bg-sd_btn_alternative_hover active:shadow-active dark:bg-gh_btn_alternative dark:hover:bg-gh_btn_alternative_hover shadow-primary border-default border-solid border-sd_btn_alternative_hover dark:border-transparent rounded-lg"
+                              className="font-medium text-sm inline-flex items-center px-5 py-2.5 text-center mr-2      bg-sd_btn_alternative border-sd_btn_alternative_hover text-white hover:bg-sd_btn_alternative_hover active:shadow-active dark:bg-gh_btn_alternative dark:hover:bg-gh_btn_alternative_hover shadow-primary border-default border-solid  dark:border-transparent rounded-full"
                             >
                               Yes, I'm sure
                             </button>
@@ -209,7 +187,7 @@ const Pin = ({ pin: { postedBy, image, _id, destination, save } }) => {
                                 setPopup(false);
                               }}
                               type="button"
-                              className="rounded-lg text-sm font-medium px-5 py-2.5        bg-sd_btn_primary border-sd_btn_primary_hover text-light hover:bg-sd_btn_primary_hover active:shadow-active dark:text-white dark:bg-gh_btn_primary dark:hover:bg-gh_btn_primary_hover shadow-primary border-default border-solid border-sd_btn_primary_hover dark:border-transparent rounded-lg"
+                              className="text-sm font-medium px-5 py-2.5        bg-sd_btn_primary text-light hover:bg-sd_btn_primary_hover active:shadow-active dark:text-white dark:bg-gh_btn_primary dark:hover:bg-gh_btn_primary_hover shadow-primary border-default border-solid border-sd_btn_primary_hover dark:border-transparent rounded-full"
                             >
                               No, cancel
                             </button>
@@ -219,7 +197,7 @@ const Pin = ({ pin: { postedBy, image, _id, destination, save } }) => {
                     </div>
                   )}
                 </>
-              )}
+              )} */}
             </div>
           </div>
         )}

@@ -86,17 +86,6 @@ const PinDetail = ({ user }) => {
     });
   };
 
-  // const titleRef = useRef();
-  function handleBackClick() {
-    // Scroll back to the title element...
-    // titleRef.current.scrollIntoView({ top: 0, behavior: "smooth" });
-    // document.getElementById('about').scrollIntoView();
-    document
-      .querySelector(
-        "#about > div > div.bg-gh-l-bg-default.dark\\:bg-gh-bg-default > div"
-      )
-      .scrollIntoView({ top: 0, behavior: "smooth" });
-  }
 
   if (!pinDetail) return <Spinner message="Loading Pin" />;
 
@@ -207,7 +196,6 @@ const PinDetail = ({ user }) => {
                     {pinDetail.postedBy?._id === user?._id && (
                       <div
                         onClick={(e) => {
-                          handleBackClick();
                           e.stopPropagation();
                           setPopup(true);
                         }}
@@ -338,7 +326,7 @@ const PinDetail = ({ user }) => {
                       {/* Post comment Button */}
                       <button
                         type="button"
-                        className="px-6 py-2 outline-none text-white font-semibold text-base bg-gh-bg-secondary border-l_gold_btn_alternative_hover hover:bg-l_gold_btn_alternative_hover active:shadow-active dark:bg-gold_btn_alternative dark:hover:bg-gold_btn_alternative_hover shadow-primary border-default border-solid dark:border-transparent rounded-full"
+                        className="px-6 py-2 outline-none text-white font-semibold text-base bg-gh-bg-secondary border-gh-bg-secondary  hover:bg-gh-bg-primary active:shadow-active dark:bg-gold_btn_alternative dark:hover:bg-gold_btn_alternative_hover shadow-primary border-default border-solid dark:border-transparent rounded-full"
                         onClick={addComment}
                       >
                         {addingComment ? "Posting the comment" : "!Post"}
@@ -358,7 +346,7 @@ const PinDetail = ({ user }) => {
                           className="fixed z-50 p-4 overflow-x-hidden overflow-y-auto inset-0 h-modal h-full backdrop-blur-sm bg-white/3"
                         >
                           <div className="top-[calc(25vh)] relative w-full h-full max-w-md md:h-auto m-auto">
-                            <div className="relative bg-sd_l_bg_primary rounded-lg shadow dark:bg-gh-bg-primary">
+                            <div className="relative bg-l_gold_default rounded-lg shadow dark:bg-gh-bg-primary">
                               <button
                                 onClick={(e) => {
                                   e.stopPropagation();
@@ -395,7 +383,7 @@ const PinDetail = ({ user }) => {
                                     e.stopPropagation();
                                     deletePin(pinId);
                                   }}
-                                  className="font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center mr-2      bg-sd_btn_alternative border-sd_btn_alternative_hover text-white hover:bg-sd_btn_alternative_hover active:shadow-active dark:bg-gh_btn_alternative dark:hover:bg-gh_btn_alternative_hover shadow-primary border-default border-solid border-sd_btn_alternative_hover dark:border-transparent rounded-lg"
+                                  className="font-medium rounded-full text-sm inline-flex items-center px-5 py-2.5 text-center mr-2      bg-sd_btn_alternative border-sd_btn_alternative_hover text-white hover:bg-sd_btn_alternative_hover active:shadow-active shadow-primary border-default border-solid dark:border-transparent"
                                 >
                                   Yes, I'm sure
                                 </button>
@@ -405,7 +393,7 @@ const PinDetail = ({ user }) => {
                                     setPopup(false);
                                   }}
                                   type="button"
-                                  className="rounded-lg text-sm font-medium px-5 py-2.5        bg-sd_btn_primary border-sd_btn_primary_hover text-light hover:bg-sd_btn_primary_hover active:shadow-active dark:text-white dark:bg-gh_btn_primary dark:hover:bg-gh_btn_primary_hover shadow-primary border-default border-solid border-sd_btn_primary_hover dark:border-transparent rounded-lg"
+                                  className="rounded-full text-sm font-medium px-5 py-2.5 bg-gh-bg-secondary border-gh-bg-secondary  hover:bg-gh-bg-primary active:shadow-active text-white dark:text-white dark:bg-gold_btn_alternative dark:hover:bg-gold_btn_alternative_hover shadow-primary border-default border-solid dark:border-transparent"
                                 >
                                   No, cancel
                                 </button>
