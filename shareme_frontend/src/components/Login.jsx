@@ -11,15 +11,16 @@ const Login = () => {
 
   const responseGoogle = (response) => {
     const decoded = jwt_decode(response.credential);
-    const { name, picture, sub } = decoded;
+    const { name, picture, sub, email } = decoded;
     const doc = {
       _id: sub,
       _type: 'user',
       userName: name,
+      userEmail: email,
       image: picture
     }
     localStorage.setItem('user', JSON.stringify(decoded));
-    // console.log(decoded);
+    console.log(decoded);
     client.createIfNotExists(doc)
       .then(() => {
         navigate('/', { replace: true })

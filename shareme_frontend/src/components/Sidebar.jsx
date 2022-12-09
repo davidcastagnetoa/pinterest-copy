@@ -79,6 +79,13 @@ const Sidebar = ({ user, closeToggle }) => {
       {/* {Dinamic Block of Code (DBC). Check if the user exists, if user exists, it will render this component} */}
       {/* If the user not exists, it render next Link */}
       <div className="w-fit flex justify-between my-5 mb-6 gap-5 mx-auto items-center">
+
+
+        
+      {/* <ul class="dropdown-inner dropdown-menu tw-top-4 tw-mt-[4px] tw-left-auto tw-right-0"><li><a id="downshift-2-item-0" role="option" aria-selected="true" class="menuitem highlighted"><div><small class="subdued">davidcastagnetoa@gmail.com</small></div></a></li><li><a id="downshift-2-item-1" role="option" aria-selected="false" class="menuitem">User settings</a></li><li><a id="downshift-2-item-2" role="option" aria-selected="false" class="menuitem">Netlify Labs</a></li><li><a id="downshift-2-item-3" role="option" aria-selected="false" class="menuitem">Sign out</a></li></ul> */}
+
+
+
         {/* User Profile */}
         {user && (
           <Link to={`user-profile/${user._id}`}>

@@ -1,6 +1,7 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { IoMdAdd, IoMdSearch } from "react-icons/io";
+import DropdownMenu from "./DropMenu";
 
 const Navbar = ({ searchTerm, setSearchTerm, user }) => {
   const navigate = useNavigate();
@@ -21,9 +22,7 @@ const Navbar = ({ searchTerm, setSearchTerm, user }) => {
         />
       </div>
       <div className="flex gap-3">
-        <Link to={`user-profile/${user?._id}`} className='hidden md:block'>
-          <img src={user.image} alt="user" className="w-14 h-12 rounded-lg" />
-        </Link>
+        <DropdownMenu />
         <Link to='create-pin' className='w-12 h-12 md:w-14 md:h-12 flex justify-center items-center bg-l_gold_btn_alternative border-l_gold_btn_alternative_hover text-white hover:bg-l_gold_btn_alternative_hover active:shadow-active dark:bg-gold_btn_alternative dark:hover:bg-gold_btn_alternative_hover shadow-primary border-default border-solid dark:border-transparent rounded-lg'>
           <IoMdAdd fontSize={24} />
         </Link>
