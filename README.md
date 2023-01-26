@@ -4,7 +4,7 @@
 <p align="center">
   This is react web application that works in mostly parts like Pinterest and it's based in this repo <a href="[https://github.com/Wanderson-Magalhaes/Login_With_PySide6_And_VSCode](https://github.com/adrianhajdin/project_shareme_social_media)"Adrian Hajdin - JS Mastery</a>, this is his tutorial <a href="https://youtu.be/XxXyfkrP298" target="_blank">JS Mastery</a> and hosted in ths link href="[abigaelmemories](https://abigaelmemories.netlify.app/)"
 </p>
-Yes, you can fork this repo. It's use React and Tailwind for the styles and the schemas for backend has deploy with Sanity.io. Please give proper credit by linking back to [JS Mastery](https://www.youtube.com/@javascriptmastery). Please visit his channel and give him all the credits for his great job!
+Yes, you can fork this repo. It's use React and Tailwind for the styles and the schemas for backend has deploy with Sanity.io. Please give proper credit by linking back to [Wanderson](https://www.youtube.com/c/WandersonIsMe). Please visit his channel and give him all the credits for his great job!
 
 ## 🛠 Dependencies to need
 
