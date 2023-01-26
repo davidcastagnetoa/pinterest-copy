@@ -46,7 +46,7 @@ Yes, you can fork this repo. It's use React and Tailwind for the styles and the 
 ## 🛠 Screenshots
 
 <div align="center">
-  <img alt="Logo" src="https://github.com/davidcastagnetoa/pinterest-copy/blob/main/shareme_frontend/src/assets/abigaelmemories.netlify.app_pin-detail_9cef7d4b-6828-49c9-ac10-ea452404243a.webp" />
+  <img alt="Logo" src="https://github.com/davidcastagnetoa/pinterest-copy/blob/main/shareme_frontend/src/assets/abigaelmemories_screenshot.jpg" />
 </div>
 
 
