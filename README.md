@@ -48,7 +48,12 @@ Yes, you can fork this repo. It's use React and Tailwind for the styles and the 
 <div align="center">
   <img alt="Logo" src="https://github.com/davidcastagnetoa/pinterest-copy/blob/main/shareme_frontend/src/assets/abigaelmemories_screenshot.jpg" />
 </div>
-
-
-
-
+<div align="center">
+  <img alt="Logo" src="https://github.com/davidcastagnetoa/pinterest-copy/blob/main/shareme_frontend/src/assets/abigaelmemories_screenshots1.png" />
+</div>
+<div align="center">
+  <img alt="Logo" src="https://github.com/davidcastagnetoa/pinterest-copy/blob/main/shareme_frontend/src/assets/abigaelmemories_screenshots3.png" />
+</div>
+<div align="center">
+  <img alt="Logo" src="https://github.com/davidcastagnetoa/pinterest-copy/blob/main/shareme_frontend/src/assets/abigaelmemories_screenshot4.png" />
+</div>
