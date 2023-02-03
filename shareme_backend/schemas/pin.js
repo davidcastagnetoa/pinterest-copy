@@ -28,12 +28,12 @@ export default {
       title: "Image",
       type: "image",
       options: {
-        hotspots: true,
+        hotspot: true,
       },
     },
     {
       name: "userId",
-      title: "UserID",
+      title: "UserId",
       type: "string",
     },
     {
