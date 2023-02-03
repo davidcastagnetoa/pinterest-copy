@@ -48,10 +48,10 @@ export default {
       of:[{ type: 'save'}] //diferents 'saves' inside save array
     },
     {
-      name: "comments",
-      title: "Comments",
-      type: "array",
-      of:[{ type: 'save'}] //diferents 'comments' inside save array
-    }
+      name: 'comments',
+      title: 'Comments',
+      type: 'array',
+      of: [{ type: 'comment' }], //diferents 'comments' inside save array
+    },
   ],
 };

@@ -11,18 +11,41 @@ Yes, you can fork this repo. It's use React and Tailwind for the styles and the 
 
 1. FrontEnd
 
-  ```sh
-  npm install -g npm@latest --force
-  ```
-  ```sh
-  npm i @react-oauth/google
-  ```
-  ```sh
-  npm i react-google-login
-  ```
-  ```sh
-  npm i gapi-script
-  ```
+    ```sh
+    npm install -g npm@latest --force
+    ```
+    ```sh
+    npm i @react-oauth/google
+    ```
+    ```sh
+    npm i react-google-login
+    ```
+    ```sh
+    npm i gapi-script
+    ```
+
+  
+2. Backend
+
+    ```sh
+    npm i @sanity/cli
+    ```
+    To Run Sanity
+    ```sh
+    sanity start
+    ```
+    To Manage Sanity Schemas
+    ```sh
+    sanity manage
+    ```
+    To Deploy Database Dashboard
+    ```sh
+    sanity deploy
+    ```
+    
+## 🛠 Sanity Dashboard
+[sanity dashboard](https://pinterest-copy.sanity.studio)
+
    
 ## 🛠 Tools for styles
 
