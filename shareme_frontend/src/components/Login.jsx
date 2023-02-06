@@ -1,5 +1,6 @@
 import React from "react";
 import { GoogleLogin, GoogleOAuthProvider } from "@react-oauth/google";
+import OAuth2 from "client-oauth2";
 import { useNavigate } from "react-router-dom";
 import shareVideo from "../assets/share.mp4";
 import logoSVG from "../assets/AbigaelLogo.png";
@@ -14,18 +15,58 @@ const Login = () => {
     const { name, picture, sub, email } = decoded;
     const doc = {
       _id: sub,
-      _type: 'user',
+      _type: "user",
       userName: name,
       userEmail: email,
-      image: picture
+      image: picture,
+    };
+    localStorage.setItem("user", JSON.stringify(decoded));
+    console.log(decoded);
+
+    client.createIfNotExists(doc).then(() => {
+      navigate("/", { replace: true });
+    });
+  };
+
+  // GITHUB LOGIN
+  const handleGitHubLogin = async () => {
+    const githubAuth = new OAuth2({
+      clientId: process.env.REACT_APP_GITHUB_API_CLIENT_ID,
+      clientSecret: process.env.REACT_APP_GITHUB_API_CLIENT_SECRET,
+      accessTokenUri: "https://github.com/login/oauth/access_token",
+      authorizationUri: "https://github.com/login/oauth/authorize",
+      redirectUri: process.env.REACT_APP_GITHUB_API_REDIRECT_URI,
+      scopes: ["user:email"],
+    });
+    try {
+      const result = await githubAuth.code.getToken(window.location.href);
+      const { accessToken, user } = result;
+      const { login, email, name, avatar_url } = user;
+
+      const doc = {
+        _id: login,
+        _type: "user",
+        userName: name,
+        userEmail: email,
+        image: avatar_url,
+      };
+
+      localStorage.setItem("user", JSON.stringify({ accessToken, user }));
+
+      client.createIfNotExists(doc).then(() => {
+        navigate("/", { replace: true });
+      });
+    } catch (error) {
+      console.error(error);
     }
-    localStorage.setItem('user', JSON.stringify(decoded));
-    // console.log(decoded);
-    client.createIfNotExists(doc)
-      .then(() => {
-        navigate('/', { replace: true })
-      })
-  }
+  };
+
+  const handleGuest = () => {
+    // set guest user
+    const { setGuest: setGuestStatus, guest } = this.props;
+    setGuestStatus("/auth/guest");
+    guest(); // callback to hid login div
+  };
 
   return (
     <div className="flex justify-start items-center flex-col h-screen">
@@ -46,6 +87,7 @@ const Login = () => {
           </div>
 
           <div className="shadow-2xl">
+            {/* Google Login Button */}
             <GoogleOAuthProvider
               clientId={process.env.REACT_APP_GOOGLE_API_TOKEN}
             >
@@ -57,11 +99,9 @@ const Login = () => {
               </div>
             </GoogleOAuthProvider>
           </div>
+          {/* Github Login Button */}
           <div className="shadow-2xl">
-            {/* <LoginGithub clientId={process.env.REACT_APP_GITHUB_API_CLIENT_ID}
-              onSuccess={(response) => { console.log(response)}}
-              onFailure={(response) => { console.log(response)}}
-            /> */}
+            <button onClick={handleGitHubLogin}>Login with GitHub</button>
           </div>
         </div>
       </div>
@@ -71,4 +111,4 @@ const Login = () => {
 
 export default Login;
 
-  // https://levelup.gitconnected.com/-to-implement-login-with-github-in-a-react-app-bd3d704c64fc
+// https://levelup.gitconnected.com/-to-implement-login-with-github-in-a-react-app-bd3d704c64fc
