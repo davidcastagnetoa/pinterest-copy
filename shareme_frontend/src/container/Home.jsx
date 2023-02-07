@@ -10,7 +10,7 @@ import { client } from "../client";
 import logo from "../assets/AbigaelLogo.png";
 import { fetchUser } from "../utils/fetchUser";
 
-const Home = ({}) => {
+const Home = () => {
   const [toggleSidebar, setToggleSidebar] = useState(false);
   const [user, setUser] = useState(null);
   const scrollRef = useRef(null);
