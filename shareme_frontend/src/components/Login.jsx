@@ -107,3 +107,5 @@ const Login = () => {
 };
 
 export default Login;
+
+// https://reactjsexample.com/google-oauth2-using-google-identity-services-for-react/
