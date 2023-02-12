@@ -1,11 +1,10 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { GoogleLogin, GoogleOAuthProvider } from "@react-oauth/google";
 import { useNavigate } from "react-router-dom";
 import shareVideo from "../assets/share.mp4";
 import logoSVG from "../assets/AbigaelLogo.png";
 import { client } from "../client";
 import jwt_decode from "jwt-decode";
-
 
 const Login = () => {
   const navigate = useNavigate();
@@ -30,8 +29,71 @@ const Login = () => {
   };
 
   // GITHUB LOGIN
-  const handleGitHubLogin = () => {
-    console.log("Here lies code component");
+
+  const CLIENT_ID = "87b5af1de0898005ef63";
+  const CLIENT_SECRET = "44f1c85369940531869ec11f059105c202de4a0e";
+  const REDIRECT_URI =
+    "https://davidcastagnetoa-vigilant-space-goggles-v5p4gwwg5gw2x495-3000.preview.app.github.dev/";
+  const AUTH_URL = `https://github.com/login/oauth/authorize?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}`;
+
+  const [loggedIn, setLoggedIn] = useState(false);
+
+  useEffect(() => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const code = urlParams.get("code");
+    if (code) {
+      handleTokenExchange(code);
+    }
+  }, []);
+
+  const handleLogin = () => {
+    window.location.replace(AUTH_URL);
+    navigate("/", { replace: true });
+    console.log("Redirecting to login page...")
+  };
+
+  const handleTokenExchange = async (code) => {
+    try {
+      const response = await fetch(
+        `https://github.com/login/oauth/access_token?client_id=${CLIENT_ID}&client_secret=${CLIENT_SECRET}&code=${code}&redirect_uri=${REDIRECT_URI}`,
+        {
+          method: "POST",
+          headers: {
+            Accept: "application/json",
+          },
+        }
+      );
+      const data = await response.json();
+      if (data.access_token) {
+        // Store token in local storage
+        localStorage.setItem("access_token", data.access_token);
+        // Fetch user data
+        const userResponse = await fetch("https://api.github.com/user", {
+          headers: {
+            Authorization: `token ${data.access_token}`,
+          },
+        });
+        const userData = await userResponse.json();
+        console.log(userData);
+        // Store user data in local storage
+        localStorage.setItem("user", JSON.stringify(userData));
+        // Set logged in status
+        setLoggedIn(true);
+        // Redirect to home page
+        navigate("/", { replace: true });
+
+      } else {
+        console.error(data);
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  };
+  
+
+  const handleLogout = () => {
+    // localStorage.removeItem("token");
+    // setLoggedIn(false);
   };
 
   return (
@@ -52,26 +114,25 @@ const Login = () => {
             <img src={logoSVG} width="200px" alt="logo" />
           </div>
 
-          <div className="shadow-2xl p-0 m-0">
+          <div className="shadow-2xl p-0 mb-2">
             {/* Google Login Button */}
             <GoogleOAuthProvider
               clientId={process.env.REACT_APP_GOOGLE_API_TOKEN}
             >
               <GoogleLogin
-                  onSuccess={responseGoogle}
-                  onError={responseGoogle}
-                  theme="filled_black"
-                  width="200"
-                />
+                onSuccess={responseGoogle}
+                onError={responseGoogle}
+                theme="filled_black"
+                width="230"
+              />
             </GoogleOAuthProvider>
-
           </div>
           {/* Github Login Button */}
           <div className="shadow-2xl">
             <button
               type="button"
-              onClick={handleGitHubLogin}
-              className="text-white w-[200px] bg-[#24292F] hover:bg-[#24292F]/90 focus:ring-4 focus:outline-none focus:ring-[#24292F]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-gray-500 dark:hover:bg-[#050708]/30 mr-2 mb-2"
+              onClick={handleLogin}
+              className="text-white w-[230px] bg-[#24292F] hover:bg-[#24292F]/90 focus:ring-4 focus:outline-none focus:ring-[#24292F]/50 font-medium rounded-md text-sm px-5 py-2.5 text-center justify-between inline-flex items-center dark:focus:ring-gray-500 dark:hover:bg-[#050708]/30"
             >
               <svg
                 className="w-4 h-4 mr-2 -ml-1"
