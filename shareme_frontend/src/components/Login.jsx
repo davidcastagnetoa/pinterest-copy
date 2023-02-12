@@ -6,10 +6,10 @@ import logoSVG from "../assets/AbigaelLogo.png";
 import { client } from "../client";
 import jwt_decode from "jwt-decode";
 
-import { useGoogleLogin } from "@moeindana/google-oauth";
 
 const Login = () => {
   const navigate = useNavigate();
+
   // GOOGLE LOGIN
   const responseGoogle = (response) => {
     const decoded = jwt_decode(response.credential);
@@ -28,17 +28,6 @@ const Login = () => {
       navigate("/", { replace: true });
     });
   };
-
-  const login = useGoogleLogin({
-    onSuccess: { responseGoogle },
-  });
-
-  // const { signIn } = useGoogleLogin({
-  //   clientId:
-  //     "210775516320-fbqt3bgs5u8ao4ol7576m1njrilg74p6.apps.googleusercontent.com",
-  //   onSuccess: responseGoogle,
-  //   onFailure: responseGoogle,
-  // });
 
   // GITHUB LOGIN
   const handleGitHubLogin = () => {
@@ -68,19 +57,21 @@ const Login = () => {
             <GoogleOAuthProvider
               clientId={process.env.REACT_APP_GOOGLE_API_TOKEN}
             >
-              <button onClick={() => login()}>Login with Google</button>
-              {/* <GoogleLogin
+              <GoogleLogin
                   onSuccess={responseGoogle}
                   onError={responseGoogle}
-                /> */}
+                  theme="filled_black"
+                  width="200"
+                />
             </GoogleOAuthProvider>
+
           </div>
           {/* Github Login Button */}
           <div className="shadow-2xl">
             <button
               type="button"
               onClick={handleGitHubLogin}
-              className="text-white bg-[#24292F] hover:bg-[#24292F]/90 focus:ring-4 focus:outline-none focus:ring-[#24292F]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-gray-500 dark:hover:bg-[#050708]/30 mr-2 mb-2"
+              className="text-white w-[200px] bg-[#24292F] hover:bg-[#24292F]/90 focus:ring-4 focus:outline-none focus:ring-[#24292F]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-gray-500 dark:hover:bg-[#050708]/30 mr-2 mb-2"
             >
               <svg
                 className="w-4 h-4 mr-2 -ml-1"
@@ -109,3 +100,4 @@ const Login = () => {
 export default Login;
 
 // https://reactjsexample.com/google-oauth2-using-google-identity-services-for-react/
+// https://github.com/MomenSherif/react-oauth#googlelogin
