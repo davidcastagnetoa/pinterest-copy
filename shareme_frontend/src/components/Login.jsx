@@ -5,7 +5,6 @@ import shareVideo from "../assets/share.mp4";
 import logoSVG from "../assets/AbigaelLogo.png";
 import { client } from "../client";
 import jwt_decode from "jwt-decode";
-
 import axios from 'axios';
 
 const Login = () => {
@@ -31,13 +30,13 @@ const Login = () => {
   };
 
   // GITHUB LOGIN
-  const CLIENT_ID = "87b5af1de0898005ef63";
-  const CLIENT_SECRET = "44f1c85369940531869ec11f059105c202de4a0e";
-  const REDIRECT_URI =
-    "https://davidcastagnetoa-vigilant-space-goggles-v5p4gwwg5gw2x495-3000.preview.app.github.dev/";
-  const AUTH_URL = `https://github.com/login/oauth/authorize?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}`;
+  // const CLIENT_ID = "87b5af1de0898005ef63";
+  // const CLIENT_SECRET = "44f1c85369940531869ec11f059105c202de4a0e";
+  // const REDIRECT_URI =
+  //   "https://davidcastagnetoa-vigilant-space-goggles-v5p4gwwg5gw2x495-3000.preview.app.github.dev/";
+  // const AUTH_URL = `https://github.com/login/oauth/authorize?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}`;
 
-  const [loggedIn, setLoggedIn] = useState(false);
+  // const [loggedIn, setLoggedIn] = useState(false);
 
   // useEffect(() => {
   //     const urlParams = new URLSearchParams(window.location.search);
