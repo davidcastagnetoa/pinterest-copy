@@ -47,42 +47,42 @@ const Login = () => {
   //     }
   // }, []);
 
-  const handleTokenExchange = async (code) => {
-    try {
-      const response = await fetch(
-        `https://github.com/login/oauth/access_token?client_id=${CLIENT_ID}&client_secret=${CLIENT_SECRET}&code=${code}&redirect_uri=${REDIRECT_URI}`,
-        {
-          method: "POST",
-          headers: {
-            Accept: "application/json",
-          },
-        }
-      );
-      const data = await response.json();
-      if (data.access_token) {
-        // Store token in local storage
-        localStorage.setItem("access_token", data.access_token);
-        // Fetch user data
-        const userResponse = await fetch("https://api.github.com/user", {
-          headers: {
-            Authorization: `token ${data.access_token}`,
-          },
-        });
-        const userData = await userResponse.json();
-        console.log(userData);
-        // Store user data in local storage
-        localStorage.setItem("user", JSON.stringify(userData));
-        // Set logged in status
-        setLoggedIn(true);
-        // Redirect to home page
-        navigate("/", { replace: true });
-      } else {
-        console.error(data);
-      }
-    } catch (error) {
-      console.error(error);
-    }
-  };
+  // const handleTokenExchange = async (code) => {
+  //   try {
+  //     const response = await fetch(
+  //       `https://github.com/login/oauth/access_token?client_id=${CLIENT_ID}&client_secret=${CLIENT_SECRET}&code=${code}&redirect_uri=${REDIRECT_URI}`,
+  //       {
+  //         method: "POST",
+  //         headers: {
+  //           Accept: "application/json",
+  //         },
+  //       }
+  //     );
+  //     const data = await response.json();
+  //     if (data.access_token) {
+  //       // Store token in local storage
+  //       localStorage.setItem("access_token", data.access_token);
+  //       // Fetch user data
+  //       const userResponse = await fetch("https://api.github.com/user", {
+  //         headers: {
+  //           Authorization: `token ${data.access_token}`,
+  //         },
+  //       });
+  //       const userData = await userResponse.json();
+  //       console.log(userData);
+  //       // Store user data in local storage
+  //       localStorage.setItem("user", JSON.stringify(userData));
+  //       // Set logged in status
+  //       setLoggedIn(true);
+  //       // Redirect to home page
+  //       navigate("/", { replace: true });
+  //     } else {
+  //       console.error(data);
+  //     }
+  //   } catch (error) {
+  //     console.error(error);
+  //   }
+  // };
 
 //   const handleGithubAuth = (authToken) => {
 //     const decodedToken = jwt_decode(authToken);
@@ -92,18 +92,18 @@ const Login = () => {
 //     console.log(decodedToken);
 //   };
 
-  const handleGithubAuth = async (response) => {
-    const { data } = await axios.post("/api/auth/github", {
-      code: response.code,
-    });
-    const { access_token } = data;
-    const userResponse = await axios.get("https://api.github.com/user", {
-      headers: { Authorization: `Bearer ${access_token}` },
-    });
-    const { name, picture, sub, email } = jwt_decode(access_token);
-    const doc = { name, picture, sub, email };
-    localStorage.setItem("user", JSON.stringify(doc));
-  };
+  // const handleGithubAuth = async (response) => {
+  //   const { data } = await axios.post("/api/auth/github", {
+  //     code: response.code,
+  //   });
+  //   const { access_token } = data;
+  //   const userResponse = await axios.get("https://api.github.com/user", {
+  //     headers: { Authorization: `Bearer ${access_token}` },
+  //   });
+  //   const { name, picture, sub, email } = jwt_decode(access_token);
+  //   const doc = { name, picture, sub, email };
+  //   localStorage.setItem("user", JSON.stringify(doc));
+  // };
 
   return (
     <div className="flex justify-start items-center flex-col h-screen">
@@ -140,7 +140,7 @@ const Login = () => {
           <div className="shadow-2xl">
             <button
               type="button"
-              onClick={handleGithubAuth}
+              // onClick={handleGithubAuth}
               className="text-white w-[230px] bg-[#24292F] hover:bg-[#24292F]/90 focus:ring-4 focus:outline-none focus:ring-[#24292F]/50 font-medium rounded-md text-sm px-5 py-2.5 text-center justify-between inline-flex items-center dark:focus:ring-gray-500 dark:hover:bg-[#050708]/30"
             >
               <svg
